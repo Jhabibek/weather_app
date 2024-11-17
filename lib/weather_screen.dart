@@ -51,7 +51,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
               weatherData['sys']['sunset'] * 1000));
       _pressure = weatherData['main']['pressure'].toString();
       _humidity = weatherData['main']['humidity'].toString();
-      _visibility = weatherData['visibility'].toString();
+      _visibility = (weatherData['visibility'] / 1000).toString();
       _windSpeed = weatherData['wind']['speed'].toString();
 
       if (_description == 'Clear') {
@@ -198,7 +198,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               index1: "Humidity",
                               index2: "Visibility",
                               value1: '$_humidity %',
-                              value2: _visibility),
+                              value2: '$_visibility Km'),
                           const SizedBox(height: 15),
                           WeatherDataTile(
                               index1: "Pressure",

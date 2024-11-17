@@ -94,6 +94,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   void initState() {
     super.initState();
     _checkLocationPermission();
+    getData('Kathmandu');
   }
 
   @override
